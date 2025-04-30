@@ -41,7 +41,6 @@ function stop() {
 
 //-------------------------------------------
 
-//==================================================
 let btn = document.getElementById("btn");
 let nameInput = document.getElementById("txt1");
 let gradeInput = document.getElementById("txt2");
@@ -49,8 +48,6 @@ let table = document
   .getElementById("studentTable")
   .getElementsByTagName("tbody")[0];
 let span = document.getElementById("span");
-let filter = document.getElementById("filter");
-let sort = document.getElementById("sort");
 
 btn.onclick = function () {
   let name = nameInput.value.trim();
@@ -67,14 +64,8 @@ btn.onclick = function () {
 
   span.style.display = "none";
 
-  if (
-    name == "" ||
-    isNaN(grade) ||
-    grade < 0 ||
-    grade > 100 ||
-    isRepeated(name)
-  ) {
-    span.innerText = "Invalid input or name exists";
+  if (name == "" || isNaN(grade) || grade < 0 || grade > 100) {
+    span.innerText = "Invalid input";
     span.style.display = "inline";
     return;
   }
